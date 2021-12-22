@@ -1,19 +1,16 @@
 const mongoose = require("mongoose");
 
-const collection = "empleados";
+const collection = "usuarios";
 
-const empleadosSchema = {
-  nombre: { type: String, required: true },
+const usuariosSchema = {
   ID: { type: String },
   Contraseña: { type: String, required: true },
-  Fecha: { type: Date, required: true },
- 
+  Rol: { type: String}
+    
 }
-const options = {
-  timestamps: true,
-}
-const schema = new mongoose.Schema(empleadosSchema, options);
 
-const Empleados = mongoose.model(collection, schema);
+const schema = new mongoose.Schema(usuariosSchema);
 
-module.exports = Empelados;
+const Usuarios = mongoose.model(collection, schema);
+
+module.exports = Usuarios;
